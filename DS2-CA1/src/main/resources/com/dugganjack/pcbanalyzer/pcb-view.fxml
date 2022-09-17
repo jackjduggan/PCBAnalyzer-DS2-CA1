@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dugganjack.pcbanalyzer.PCBController">
+   <children>
+      <Label fx:id="infoLabel" alignment="CENTER" layoutY="28.0" prefHeight="17.0" prefWidth="600.0" text="PCB Analyzer">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="myImageView" fitHeight="300.0" fitWidth="382.0" layoutX="27.0" layoutY="74.0" onMousePressed="#colorGrabber" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="imageDescriptionLabel" alignment="CENTER" layoutX="391.0" layoutY="65.0" prefHeight="17.0" prefWidth="200.0" text="Image Description" underline="true">
+         <font>
+            <Font name="Bauhaus 93" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="fileNameLabel" layoutX="425.0" layoutY="92.0" prefHeight="17.0" prefWidth="163.0" text="File Name:" />
+      <Label fx:id="fileSizeLabel" layoutX="425.0" layoutY="117.0" prefHeight="17.0" prefWidth="163.0" text="File Size:" />
+      <Label fx:id="filePathLabel" layoutX="425.0" layoutY="142.0" prefHeight="17.0" prefWidth="163.0" text="File Path:" />
+      <MenuBar fx:id="menuBar" layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+         <menus>
+            <Menu fx:id="menuBarFile" mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem fx:id="menuBarFileOpenImage" mnemonicParsing="false" text="Open Image" />
+                  <MenuItem fx:id="menuBarFileCloseApplication" mnemonicParsing="false" onAction="#exitApplicationAction" text="Close Application" />
+               </items>
+            </Menu>
+            <Menu fx:id="menuBarAbout" mnemonicParsing="false" text="About" />
+         </menus>
+      </MenuBar>
+      <Button fx:id="originalColourButton" layoutX="425.0" layoutY="187.0" mnemonicParsing="false" onAction="#imageSetOriginal" text="Original" />
+      <Button fx:id="noiseReductionButton" layoutX="425.0" layoutY="304.0" mnemonicParsing="false" onAction="#analyzeImage" text="Analyze" />
+      <Label fx:id="numOfComponentsLabel" layoutX="425.0" layoutY="281.0" prefHeight="17.0" prefWidth="115.0" text="Components:" />
+      <Button fx:id="clearButton" layoutX="425.0" layoutY="336.0" mnemonicParsing="false" onAction="#callRemoveRect" text="Clear" />
+      <Line endX="100.0" endY="135.0" layoutX="309.0" layoutY="255.0" startX="100.0" startY="-220.0" />
+      <Label fx:id="imageDescriptionLabel1" alignment="CENTER" layoutX="397.0" layoutY="162.0" prefHeight="17.0" prefWidth="200.0" text="Image Manipulation" underline="true">
+         <font>
+            <Font name="Bauhaus 93" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="imageDescriptionLabel11" alignment="CENTER" layoutX="379.0" layoutY="256.0" prefHeight="17.0" prefWidth="200.0" text="Image Analysis" underline="true">
+         <font>
+            <Font name="Bauhaus 93" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="tooltipButton" layoutX="497.0" layoutY="336.0" mnemonicParsing="false" text="Tooltips" />
+      <Button fx:id="randomColourButton" layoutX="425.0" layoutY="224.0" mnemonicParsing="false" onAction="#randomColorComponentsAction" text="Random" />
+      <TextField fx:id="noiseReductionTextField" layoutX="542.0" layoutY="305.0" prefHeight="25.0" prefWidth="33.0" />
+      <Label fx:id="noiseReductionLabel" layoutX="522.0" layoutY="290.0" prefHeight="17.0" prefWidth="115.0" text="Noise Reduc." />
+   </children>
+</AnchorPane>
